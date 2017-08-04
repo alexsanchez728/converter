@@ -6,18 +6,20 @@
 </head>
 <body>
 
-<section id="container">
+<section>
 
 	<h1>Temperature Converter</h1>
 
-	<div id="buttonBox">
-		<input type="radio" name="convertingButton" value="celsius">Celsius
-		<input type="radio" name="convertingButton" value="fahrenheit">Fahrenheit
-	</div>
-	<input type="number" name="inputTemp">Enter a temperature
+<!-- 	<div id="radioInputs">-->
+		<input id="radioInputs" type="radio" name="convertingButton" value="celsius">Celsius
+		<input id="radioInputs" type="radio" name="convertingButton" value="fahrenheit">Fahrenheit
+<!-- 	</div>-->
+	<input type="number" name="inputTemp" id="inputTemp">Enter a temperature
 
-	<button type="button" id="converter">Convert!</button>
-	<button type="button" id="reseter">Start again</button>
+	<div id="buttonBox">
+		<button type="button" id="converter">Convert!</button>
+		<button type="button" id="reseter">Start again</button>
+	</div>
 
 	<h3>89 degrees F</h3>
 
