@@ -8,7 +8,7 @@ var tempValues = { fHot: 90, fCold: 32, cHot: 32, cCold: 0 };
 function toCelsius (tempInput) {
     var tempInput = parseInt(tempInput.value);
     var celsius = (tempInput - 32) / 1.8;
-    returnTemp.innerHTML = (celsius * 100) / 100;
+    returnTemp.innerHTML = (celsius.toFixed(2));
 
 colorResult(celsius, tempValues.cHot, tempValues.cCold)
 }
@@ -16,7 +16,7 @@ colorResult(celsius, tempValues.cHot, tempValues.cCold)
 function toFahrenheit (tempInput) {
     var tempInput = parseInt(tempInput.value);
     var fahrenheit = (tempInput * 1.8) + 32;
-    returnTemp.innerHTML = (fahrenheit * 100) / 100;
+    returnTemp.innerHTML = (fahrenheit.toFixed(2));
     returnTemp.innerHTML = fahrenheit;
 
 colorResult(fahrenheit, tempValues.fHot, tempValues.fCold);
@@ -47,4 +47,3 @@ function colorResult(convertingTo, high, low) {
  		: returnTemp.style.color = "green");
 }
 
-toFahrenheit(100);
