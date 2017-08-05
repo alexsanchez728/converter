@@ -1,70 +1,50 @@
-function toCelsius (inputTemp) {
+var tempInput = document.getElementById("tempInput");
+var radioCelsius = document.getElementById("radioCelsius");
+var radioFahrenheit = document.getElementById("radioFahrenheit");
+var returnTemp = document.getElementById("returnTemp")
+var domString;
+var tempValues = { fHot: 90, fCold: 32, cHot: 32, cCold: 0 };
 
-	var convertedTemp = (inputTemp × 1.8) + 32;
+function toCelsius (tempInput) {
+    var tempInput = parseInt(tempInput.value);
+    var celsius = (tempInput - 32) / 1.8;
+    returnTemp.innerHTML = (celsius * 100) / 100;
 
-// USING IF STATEMENTS
-	// if (convertedTemp > 32 ) {
-	// 	document.getElementById("retruendTemp").addClass(".hot");
-	// } else if (convertedTemp < 0) {
-	// 	document.getElementById("retruendTemp").addClass(".cold");
-	// } else {
-	// 	document.getElementById("retruendTemp").addClass(".fair");
-	// }
-
-//TOGGLING
-	// div will always have class="fair" which is green until...
-	h3.classList.toggle("hot", convertedTemp < 32 );
-	h3.classList.toggle("cold", convertedTemp > 0 );
-	
+colorResult(celsius, tempValues.cHot, tempValues.cCold)
 }
 
-function toFahrenheit (inputTemp) {
+function toFahrenheit (tempInput) {
+    var tempInput = parseInt(tempInput.value);
+    var fahrenheit = (tempInput * 1.8) + 32;
+    returnTemp.innerHTML = (fahrenheit * 100) / 100;
+    returnTemp.innerHTML = fahrenheit;
 
-	var convertedTemp = (inputTemp - 32) / 1.8;
+colorResult(fahrenheit, tempValues.fHot, tempValues.fCold);
 
-// USING IF STATEMENTS
-	// if (convertedTemp > 90 ) {
-	// 	document.getElementById("retruendTemp").addClass(".hot");
-	// } else if (convertedTemp < 32) {
-	// 	document.getElementById("retruendTemp").addClass(".cold");
-	// } else {
-	// 	document.getElementById("retruendTemp").addClass(".fair");
-	// }
-
-//TOGGLING
-	// div will always have class="fair" which is green until...
-	h3.classList.toggle("hot", convertedTemp < 90 );
-	h3.classList.toggle("cold", convertedTemp > 32 );
-	
 }
 
-// Get a reference to the button element in the DOM
-var button = document.getElementById("converter");
-
-// Get a reference to the number input element in the DOM
-var inputTemp = document.getElementById("inputTemp")
-
-// This function should determine which conversion should
-// happen based on which radio button is selected.
 function determineConverter () {
-  console.log("event", clickEvent);
-
-	//grabs the value of the chosen radio button
-	//and stores in convertionChoice
-	var convertionChoice = document.getElementById("convertingButton").value;
-
-	// runs given function based on choice
-	if (convertChoice === celsius) {
-		toCelsius(inputTemp);
-	} else if (convertChoice === fahrenheit) {
-		toFahrenheit(inputTemp);
-	}
+    if (radioCelsius.checked) {
+        returnTemp = toCelsius(tempInput);
+    } else if (radioFahrenheit.checked) {
+        returnTemp = toFahrenheit(tempInput);
+        domString += '<h2 id="returnTemp">' + returnTemp + '</h2>';
+    } else if (radioCelsius === false && radioFahrenheit === false){
+        alert ("Select Celsius or Fahrenheit to convert your temperture.");
+    }
+    console.log("this is the convert temp function");
+}
+function resetForm() {
+    document.getElementById("tempForm").reset();
+    document.getElementById("returnTemp").reset(clear);
 }
 
-// Assign a function to be executed when the button is clicked
-button.addEventListener("click", determineConverter);
+document.getElementById("determineConverter").addEventListener("click", determineConverter);
 
-
-function printToDom() {
-	var domString = document.write()
+function colorResult(convertingTo, high, low) {
+    convertingTo > high ? returnTemp.style.color = "red"
+   	: (convertingTo < low ? returnTemp.style.color = "blue"
+ 		: returnTemp.style.color = "green");
 }
+
+toFahrenheit(100);
