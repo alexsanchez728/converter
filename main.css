@@ -15,28 +15,3 @@ section * {
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
-
-h1 {
-	text-align: center;
-
-}
-h3 {
-text-align: center;
-
-}
-
-/*.radioInputs {
-}*/
-.inputTemp {
- display: block;
-}
-.radioInputs {
-display: block;
-}
-.buttonBox {
-
-
-}
-.buttonBox button {
-
-}
