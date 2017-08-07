@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Temperature Converter</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
+
 <body>
+  <section>
+     <div>
+     <h1>Temperature Converter</h1>
+   
+     <input type="button" id="determineConverter" value="Convert">
+     <input type="button" value="Another Temperature" onClick="window.location.reload()">
+    </div>
+    <form id="tempForm">Enter a Temperature:
 
-    <h1>Temperature Converter</h1>
-
-    <form id="tempForm">
-        Temperature
-        <input type="text" name="tempInput" id="tempInput">
-    <br>
-    Convert to:<br>
-  <input type="radio" name="radioTemp" id="radioCelsius" value="Celsius"> Celsius<br>
-  <input type="radio" name="radioTemp" id="radioFahrenheit" value="Fahrenheit"> Fahrenheit<br>
-
-    <button type="button" id="determineConverter"> Convert</button>
+      <input type="number" name="tempInput" id="tempInput">
+      <br>Convert to:<br>
+      <input type="radio" name="radioTemp" id="radioCelsius"> Celsius<br>
+      <input type="radio" name="radioTemp" id="radioFahrenheit"> Fahrenheit<br>
 
 
-<h2 id="returnTemp"></h2>
+      <h4 id="returnTemp"></h4>
 
-    <input type="button" value="Another Temperature" onClick="window.location.reload()">
-</form>
+    </form>
+</section>
 
-    <script type="text/javascript" src="main.js"></script>
-
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
