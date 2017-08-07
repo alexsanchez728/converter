@@ -32,6 +32,15 @@ function determineConverter () {
 
 document.getElementById("determineConverter").addEventListener("click", determineConverter);
 
+// document.getElementById("determineConverter")
+//     .addEventListener("keyup", function(event) {
+//     event.preventDefault();
+//     if (event.keyCode == 13) {
+//         document.getElementById("determineConverter").click(determineConverter);
+//     }
+// });
+
+
 function colorResult(convertingTo, high, low) {
     convertingTo > high ? returnTemp.style.color = "red" : (convertingTo < low ? returnTemp.style.color = "blue" : returnTemp.style.color = "green");
 }
