@@ -1,17 +1,29 @@
-
 body {
 	background-color: lightblue;
+	font-family: futura, sans-serif;
+	font-weight: 200;
+	font-size: 1.2em;
 }
 
 section {
 	background-color: #cbf;
-	max-width: 800px;
+	width: 600px;
+	height: 300px;
 	margin: 0 30%;
-/* 	display: flex;
- flex-direction: column*/
- /*justify-content: space-around;*/
+	display: flex;
+
 }
 section * {
 	padding-top: 12px;
 	padding-bottom: 12px;
+}
+h1 {
+	margin: 30px 15px;
+	text-align: center;
+}
+div input {
+	width: 140px;
+}
+#tempForm {
+	margin-top: 20px;
 }
